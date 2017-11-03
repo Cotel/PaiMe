@@ -9,6 +9,7 @@
 import Foundation
 
 class DebtsListInteractor: DebtsListInteractorInput {
+    
     var presenter: DebtsListInteractorOutput?
     let dao: DebtsDAO
     
@@ -20,6 +21,11 @@ class DebtsListInteractor: DebtsListInteractorInput {
         let debts = dao.getAllDebts()
         presenter?.didRetrieveDebts(debts)
     }
-    
+
+    func handleNewDebt(debt: Debt) {
+        dao.addDebt(debt: debt)
+    }
     
 }
+
+

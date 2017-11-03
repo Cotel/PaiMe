@@ -19,6 +19,8 @@ class NewDebtInteractor: NewDebtInteractorInput {
     func createNewDebt(from: String, to: String, quantity: Double) {
         let debt = Debt(from: from, to: to, quantity: quantity)
         dao.addDebt(debt: debt)
+        let notificationObject : [String:Debt] = ["NewDebt":debt]
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "AddedNewDebt"), object: nil, userInfo: notificationObject)
         presenter?.onDebtCreated(debt)
     }
     

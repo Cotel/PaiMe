@@ -41,4 +41,5 @@ protocol DebtsListInteractorOutput {
 protocol DebtsListInteractorInput {
     var presenter: DebtsListInteractorOutput? {get set}
     func retrieveDebts()
+    func handleNewDebt(debt: Debt)
 }

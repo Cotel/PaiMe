@@ -13,9 +13,11 @@ class DebtsListPresenter: DebtsListPresentation {
     var interactor: DebtsListInteractorInput?
     var wireframe: DebtsListWireframe?
     
-    func onViewDidLoad() {
+    @objc func onViewDidLoad() {
         view?.showLoading()
         interactor?.retrieveDebts()
+        NotificationCenter.default.addObserver(view, selector: #selector(handleNewDebt(notification:)), name: NSNotification.Name(rawValue: "AddedNewDebt"), object: nil)
+
     }
     
     func showNewDebtModal() {
@@ -47,3 +49,12 @@ extension DebtsListPresenter: NewDebtModalDelegate {
     }
     
 }
+
+extension DebtsListPresenter {
+        @objc func handleNewDebt(notification: NSNotification){
+            if let debt = notification.userInfo?["NewDebt"] as? Debt {
+                self.interactor?.handleNewDebt(debt: debt)
+            }
+        }
+}
+
