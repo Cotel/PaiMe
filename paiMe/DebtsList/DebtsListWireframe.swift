@@ -16,7 +16,7 @@ class DebtsListWireframe : DebtsListWireframeProtocol {
     }
     
     class func createDebtsListModule() -> UIViewController {
-        let navController = mainStoryboard.instantiateViewController(withIdentifier: "DebtsListNavigationController")
+        let navController = mainStoryboard.instantiateViewController(withIdentifier: "DebtsListViewController")
         if let view = navController.childViewControllers.first as? DebtsListView {
             let presenter = DebtsListPresenter()
             let dao = DebtsDAO()

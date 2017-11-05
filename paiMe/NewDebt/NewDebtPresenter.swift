@@ -9,7 +9,7 @@
 import Foundation
 
 class NewDebtPresenter: NewDebtPresentation {
-    var modalDelegate: NewDebtModalDelegate?
+    var delegate: NewDebtModalDelegate?
     var interactor: NewDebtInteractorInput?
     var wireframe: NewDebtWireframe?
     var view: NewDebtView?
@@ -21,12 +21,16 @@ class NewDebtPresenter: NewDebtPresentation {
     func createNewDebt(from: String, to: String, quantity: Double) {
         interactor?.createNewDebt(from: from, to: to, quantity: quantity)
     }
+    
+    func dismiss() {
+        wireframe?.dismiss(view!)
+    }
 }
 
 extension NewDebtPresenter: NewDebtInteractorOutput {
     func onDebtCreated(_ debt: Debt) {
-        wireframe?.dismissModal()
-        modalDelegate?.addDebtDidSave()
+        delegate?.sendValue(debt)
+        view?.dismissModal()
     }
     
     func onError() {

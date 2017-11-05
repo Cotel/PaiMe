@@ -38,12 +38,7 @@ extension DebtsListPresenter: DebtsListInteractorOutput {
 }
 
 extension DebtsListPresenter: NewDebtModalDelegate {
-    func addDebtDidSave() {
-        interactor?.retrieveDebts()
+    func sendValue(_ debt: Debt) {
+        view?.showData([debt])
     }
-    
-    func addDebtDidCancel() {
-        
-    }
-    
 }

@@ -20,10 +20,11 @@ protocol NewDebtPresentation {
     var view: NewDebtView? {get set}
     var interactor: NewDebtInteractorInput? {get set}
     var wireframe: NewDebtWireframe? {get set}
-    var modalDelegate: NewDebtModalDelegate? {get set}
+    var delegate: NewDebtModalDelegate? {get set}
     
     func onViewDidLoad()
     func createNewDebt(from: String, to: String, quantity: Double)
+    func dismiss()
 }
 
 protocol NewDebtInteractorOutput {
@@ -32,8 +33,7 @@ protocol NewDebtInteractorOutput {
 }
 
 protocol NewDebtModalDelegate {
-    func addDebtDidSave()
-    func addDebtDidCancel()
+    func sendValue(_ debt: Debt)
 }
 
 protocol NewDebtInteractorInput {
@@ -41,9 +41,7 @@ protocol NewDebtInteractorInput {
     func createNewDebt(from: String, to: String, quantity: Double)
 }
 
-protocol NewDebtWireframeProtocol {
-    var view: NewDebtView? {get set}
-    
+protocol NewDebtWireframeProtocol {    
     static func createNewDebtModule(modalDelegate: NewDebtModalDelegate) -> UIViewController
-    func dismissModal()
+    func dismiss(_ view: NewDebtView)
 }

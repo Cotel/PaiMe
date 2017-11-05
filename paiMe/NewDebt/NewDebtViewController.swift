@@ -11,7 +11,6 @@ import UIKit
 class NewDebtViewController: UIViewController {
 
     var presenter: NewDebtPresentation?
-    var newDebt: Debt?
     
     @IBOutlet weak var fromTextField: UITextField!
     @IBOutlet weak var toTextField: UITextField!
@@ -31,7 +30,9 @@ class NewDebtViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         presenter?.onViewDidLoad()
-    }    
+    }
+    
+
 
 }
 
@@ -41,7 +42,7 @@ extension NewDebtViewController: NewDebtView {
     }
     
     func dismissModal() {
-        self.dismiss(animated: true, completion: nil)
+        presenter?.dismiss()
     }
     
 }

@@ -17,6 +17,10 @@ class DebtsListViewController: UIViewController {
         super.viewDidLoad()
         presenter?.onViewDidLoad()
     }
+    
+    @IBAction func onAddButtonPressed(_ sender: UIBarButtonItem) {
+        presenter?.showNewDebtModal()
+    }
 }
 
 extension DebtsListViewController : DebtsListView {

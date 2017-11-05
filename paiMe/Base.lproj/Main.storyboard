@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="CKh-1O-8LE">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Fkx-7S-2rX">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--PaiMe-->
+        <!--DebtsListViewController-->
         <scene sceneID="R9k-fS-JcN">
             <objects>
-                <tableViewController id="t1b-MS-zDp" customClass="DebtsListViewController" customModule="paiMe" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController title="DebtsListViewController" id="t1b-MS-zDp" customClass="DebtsListViewController" customModule="paiMe" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="AA1-B3-LLm">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -52,7 +52,7 @@
                     <navigationItem key="navigationItem" title="PaiMe" id="xiH-xt-pGq">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="Ohf-IS-NPr">
                             <connections>
-                                <segue destination="P08-2V-3fD" kind="presentation" id="tX4-T7-AlJ"/>
+                                <action selector="onAddButtonPressed:" destination="t1b-MS-zDp" id="jy0-IY-VQR"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -62,12 +62,12 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0gy-fZ-sMK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="223.19999999999999" y="-152.47376311844079"/>
+            <point key="canvasLocation" x="562.39999999999998" y="-152.47376311844079"/>
         </scene>
-        <!--New Debt-->
+        <!--NewDebtViewController-->
         <scene sceneID="sAN-aE-fO7">
             <objects>
-                <viewController id="qbc-hK-qex" customClass="NewDebtViewController" customModule="paiMe" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="NewDebtViewController" title="NewDebtViewController" id="qbc-hK-qex" customClass="NewDebtViewController" customModule="paiMe" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="bHU-5q-mXa">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -142,43 +142,43 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xpc-50-Cdl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1658.4000000000001" y="-152.47376311844079"/>
+            <point key="canvasLocation" x="1895" y="-153"/>
         </scene>
-        <!--DebtsListNavigationController-->
-        <scene sceneID="rjk-ET-WLq">
+        <!--DebtsListViewController-->
+        <scene sceneID="Eni-LY-LbN">
             <objects>
-                <navigationController storyboardIdentifier="DebtsListNavigationController" title="DebtsListNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="CKh-1O-8LE" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="DebtsListViewController" title="DebtsListViewController" automaticallyAdjustsScrollViewInsets="NO" id="Fkx-7S-2rX" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="LVD-ra-N4X">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ggW-AD-hji">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="t1b-MS-zDp" kind="relationship" relationship="rootViewController" id="che-Im-k8c"/>
+                        <segue destination="t1b-MS-zDp" kind="relationship" relationship="rootViewController" id="Ddf-c9-oZq"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="f2q-lS-jJm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dSN-cP-iuf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-503" y="-152"/>
+            <point key="canvasLocation" x="-183" y="-152"/>
         </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="kiF-DL-JZ2">
+        <!--NewDebtNavigationController-->
+        <scene sceneID="p8W-YO-ADK">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="P08-2V-3fD" sceneMemberID="viewController">
+                <navigationController title="NewDebtNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="52e-St-fE9" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="561-H8-Ih4">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="SvT-Ij-0oE">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="qbc-hK-qex" kind="relationship" relationship="rootViewController" id="lda-id-coT"/>
+                        <segue destination="qbc-hK-qex" kind="relationship" relationship="rootViewController" id="Ja1-7u-taD"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="odl-ZL-xcb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="754-FR-mQ3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="953" y="-152"/>
+            <point key="canvasLocation" x="1251.2" y="-152.92353823088456"/>
         </scene>
     </scenes>
 </document>

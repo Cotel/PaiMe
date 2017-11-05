@@ -10,15 +10,13 @@ import Foundation
 import UIKit
 
 class NewDebtWireframe : NewDebtWireframeProtocol {    
-    var view: NewDebtView?
-    
     static var mainStoryboard: UIStoryboard {
         return UIStoryboard(name: "Main", bundle: Bundle.main)
     }
     
     class func createNewDebtModule(modalDelegate: NewDebtModalDelegate) -> UIViewController {
-        let navController = mainStoryboard.instantiateViewController(withIdentifier: "NewDebtNavigationController")
-        if var view = navController.childViewControllers.first as? NewDebtView {
+        let viewController = mainStoryboard.instantiateViewController(withIdentifier: "NewDebtViewController")
+        if var view = viewController as? NewDebtView {
             let presenter = NewDebtPresenter()
             let dao = DebtsDAO()
             let interactor = NewDebtInteractor(dao: dao)
@@ -27,19 +25,20 @@ class NewDebtWireframe : NewDebtWireframeProtocol {
             view.presenter = presenter
             presenter.view = view
             presenter.wireframe = wireframe
-            wireframe.view = view
             presenter.interactor = interactor
-            presenter.modalDelegate = modalDelegate
+            presenter.delegate = modalDelegate
             interactor.presenter = presenter
             
-            return navController
+            return viewController
         }
         
         return UIViewController()
     }
     
-    func dismissModal() {
-        view?.dismissModal()
+    func dismiss(_ view: NewDebtView) {
+        if let sourceView = view as? UIViewController {
+            sourceView.navigationController?.popViewController(animated: true)
+        }
     }
     
 }

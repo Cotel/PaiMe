@@ -25,6 +25,7 @@ protocol DebtsListPresentation {
     var wireframe: DebtsListWireframe? {get set}
     
     func onViewDidLoad()
+    func showNewDebtModal()
 }
 
 protocol DebtsListWireframeProtocol {
