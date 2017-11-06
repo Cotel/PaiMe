@@ -34,6 +34,25 @@ class DebtsListWireframe : DebtsListWireframeProtocol {
         return UIViewController()
     }
     
+    class func createOwesListModule() -> UIViewController {
+        let navController = mainStoryboard.instantiateViewController(withIdentifier: "OwesListNavigationController")
+        if let view = navController.childViewControllers.first as? DebtsListView {
+            let presenter = DebtsListPresenter()
+            let dao = DebtsDAO()
+            let interactor = OwesListInteractor(dao: dao)
+            let wireframe = DebtsListWireframe()
+            
+            view.presenter = presenter
+            presenter.view = view
+            presenter.wireframe = wireframe
+            presenter.interactor = interactor
+            interactor.presenter = presenter
+            
+            return navController
+        }
+        return UIViewController()
+    }
+    
     func presentNewDebtScreen(from view: DebtsListView) {
         let newDebtViewController = NewDebtWireframe.createNewDebtModule(modalDelegate: view.presenter as! NewDebtModalDelegate)
         

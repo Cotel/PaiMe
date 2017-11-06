@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		3D2E28891FACD155005DEAE3 /* NewDebtInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D2E28881FACD155005DEAE3 /* NewDebtInteractor.swift */; };
+		3D80C2D11FB065D600E430FB /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D80C2D01FB065D600E430FB /* TabBarController.swift */; };
+		3D80C2D31FB06DBD00E430FB /* OwesListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D80C2D21FB06DBD00E430FB /* OwesListInteractor.swift */; };
+		3D80C2D51FB06FEC00E430FB /* OwesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D80C2D41FB06FEC00E430FB /* OwesListViewController.swift */; };
 		3D89991B1FAC632200EF6B32 /* DebtsListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D89991A1FAC632200EF6B32 /* DebtsListPresenter.swift */; };
 		3D89991E1FAC634000EF6B32 /* DebtsListContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D89991D1FAC634000EF6B32 /* DebtsListContract.swift */; };
 		3D8999201FAC650E00EF6B32 /* DebtsListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D89991F1FAC650E00EF6B32 /* DebtsListInteractor.swift */; };
@@ -46,6 +49,9 @@
 
 /* Begin PBXFileReference section */
 		3D2E28881FACD155005DEAE3 /* NewDebtInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewDebtInteractor.swift; sourceTree = "<group>"; };
+		3D80C2D01FB065D600E430FB /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		3D80C2D21FB06DBD00E430FB /* OwesListInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OwesListInteractor.swift; sourceTree = "<group>"; };
+		3D80C2D41FB06FEC00E430FB /* OwesListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OwesListViewController.swift; sourceTree = "<group>"; };
 		3D89991A1FAC632200EF6B32 /* DebtsListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebtsListPresenter.swift; sourceTree = "<group>"; };
 		3D89991D1FAC634000EF6B32 /* DebtsListContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebtsListContract.swift; sourceTree = "<group>"; };
 		3D89991F1FAC650E00EF6B32 /* DebtsListInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebtsListInteractor.swift; sourceTree = "<group>"; };
@@ -105,6 +111,8 @@
 				3D89991F1FAC650E00EF6B32 /* DebtsListInteractor.swift */,
 				3D8999211FAC655500EF6B32 /* DebtsDAO.swift */,
 				3D89992A1FAC847500EF6B32 /* DebtsListWireframe.swift */,
+				3D80C2D21FB06DBD00E430FB /* OwesListInteractor.swift */,
+				3D80C2D41FB06FEC00E430FB /* OwesListViewController.swift */,
 			);
 			path = DebtsList;
 			sourceTree = "<group>";
@@ -152,6 +160,7 @@
 				3DDFBC3F1FABA963005DBD54 /* Assets.xcassets */,
 				3DDFBC411FABA963005DBD54 /* LaunchScreen.storyboard */,
 				3DDFBC441FABA963005DBD54 /* Info.plist */,
+				3D80C2D01FB065D600E430FB /* TabBarController.swift */,
 			);
 			path = paiMe;
 			sourceTree = "<group>";
@@ -308,6 +317,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3D80C2D51FB06FEC00E430FB /* OwesListViewController.swift in Sources */,
 				3D89992D1FAC86E200EF6B32 /* NewDebtWireframe.swift in Sources */,
 				3D89991E1FAC634000EF6B32 /* DebtsListContract.swift in Sources */,
 				3DDFBC671FABAAAF005DBD54 /* Debt.swift in Sources */,
@@ -320,6 +330,8 @@
 				3D8999201FAC650E00EF6B32 /* DebtsListInteractor.swift in Sources */,
 				3D8999271FAC6C8100EF6B32 /* NewDebtPresenter.swift in Sources */,
 				3D2E28891FACD155005DEAE3 /* NewDebtInteractor.swift in Sources */,
+				3D80C2D11FB065D600E430FB /* TabBarController.swift in Sources */,
+				3D80C2D31FB06DBD00E430FB /* OwesListInteractor.swift in Sources */,
 				3D8999221FAC655500EF6B32 /* DebtsDAO.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

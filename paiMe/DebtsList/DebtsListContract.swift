@@ -30,6 +30,7 @@ protocol DebtsListPresentation {
 
 protocol DebtsListWireframeProtocol {
     static func createDebtsListModule() -> UIViewController
+    static func createOwesListModule() -> UIViewController
     
     func presentNewDebtScreen(from view: DebtsListView)
 }

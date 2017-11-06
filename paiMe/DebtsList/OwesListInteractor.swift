@@ -1,14 +1,14 @@
 //
-//  GetDebts.swift
+//  OwesListInteractor.swift
 //  paiMe
 //
-//  Created by Miguel Coleto Muñoz on 3/11/17.
+//  Created by Miguel Coleto Muñoz on 6/11/17.
 //  Copyright © 2017 Miguel Coleto Muñoz. All rights reserved.
 //
 
 import Foundation
 
-class DebtsListInteractor: DebtsListInteractorInput {
+class OwesListInteractor: DebtsListInteractorInput {
     var presenter: DebtsListInteractorOutput?
     let dao: DebtsDAO
     
@@ -17,8 +17,8 @@ class DebtsListInteractor: DebtsListInteractorInput {
     }
     
     func retrieveDebts() {
-        let debts = dao.getAllDebts().filter { $0.to == "Me" }
-        presenter?.didRetrieveDebts(debts)
+        let owes = dao.getAllDebts().filter { $0.from == "Me" }
+        presenter?.didRetrieveDebts(owes)
     }
     
     
