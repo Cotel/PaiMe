@@ -15,8 +15,8 @@ class NewDebtWireframe : NewDebtWireframeProtocol {
     }
     
     class func createNewDebtModule(modalDelegate: NewDebtModalDelegate) -> UIViewController {
-        let viewController = mainStoryboard.instantiateViewController(withIdentifier: "NewDebtViewController")
-        if var view = viewController as? NewDebtView {
+        let navController = mainStoryboard.instantiateViewController(withIdentifier: "NewDebtNavigationController")
+        if var view = navController.childViewControllers.first as? NewDebtView {
             let presenter = NewDebtPresenter()
             let dao = DebtsDAO()
             let interactor = NewDebtInteractor(dao: dao)
@@ -29,7 +29,7 @@ class NewDebtWireframe : NewDebtWireframeProtocol {
             presenter.delegate = modalDelegate
             interactor.presenter = presenter
             
-            return viewController
+            return navController
         }
         
         return UIViewController()
@@ -37,7 +37,7 @@ class NewDebtWireframe : NewDebtWireframeProtocol {
     
     func dismiss(_ view: NewDebtView) {
         if let sourceView = view as? UIViewController {
-            sourceView.navigationController?.popViewController(animated: true)
+            sourceView.navigationController?.dismiss(animated: true, completion: nil)
         }
     }
     

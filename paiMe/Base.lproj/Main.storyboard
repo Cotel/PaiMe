@@ -144,10 +144,10 @@
             </objects>
             <point key="canvasLocation" x="1895" y="-153"/>
         </scene>
-        <!--DebtsListViewController-->
+        <!--DebtsListNavigationController-->
         <scene sceneID="Eni-LY-LbN">
             <objects>
-                <navigationController storyboardIdentifier="DebtsListViewController" title="DebtsListViewController" automaticallyAdjustsScrollViewInsets="NO" id="Fkx-7S-2rX" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="DebtsListNavigationController" title="DebtsListNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="Fkx-7S-2rX" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ggW-AD-hji">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -165,7 +165,7 @@
         <!--NewDebtNavigationController-->
         <scene sceneID="p8W-YO-ADK">
             <objects>
-                <navigationController title="NewDebtNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="52e-St-fE9" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="NewDebtNavigationController" title="NewDebtNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="52e-St-fE9" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="SvT-Ij-0oE">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>

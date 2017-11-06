@@ -16,7 +16,7 @@ class DebtsListWireframe : DebtsListWireframeProtocol {
     }
     
     class func createDebtsListModule() -> UIViewController {
-        let navController = mainStoryboard.instantiateViewController(withIdentifier: "DebtsListViewController")
+        let navController = mainStoryboard.instantiateViewController(withIdentifier: "DebtsListNavigationController")
         if let view = navController.childViewControllers.first as? DebtsListView {
             let presenter = DebtsListPresenter()
             let dao = DebtsDAO()
@@ -38,7 +38,7 @@ class DebtsListWireframe : DebtsListWireframeProtocol {
         let newDebtViewController = NewDebtWireframe.createNewDebtModule(modalDelegate: view.presenter as! NewDebtModalDelegate)
         
         if let sourceView = view as? UIViewController {
-            sourceView.navigationController?.pushViewController(newDebtViewController, animated: true)
+            sourceView.navigationController?.present(newDebtViewController, animated: true, completion: nil)
         }
     }
 }
