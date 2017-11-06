@@ -15,7 +15,15 @@ class NewDebtPresenter: NewDebtPresentation {
     var view: NewDebtView?
     
     func onViewDidLoad() {
-        
+        view?.disableSaveButton()
+    }
+    
+    func updateSaveButton(from: String, to: String, quantity: String) {
+        if (from.isEmpty || to.isEmpty || quantity.isEmpty) {
+            view?.disableSaveButton()
+        } else {
+            view?.enableSaveButton()
+        }
     }
     
     func createNewDebt(from: String, to: String, quantity: Double) {
@@ -36,6 +44,5 @@ extension NewDebtPresenter: NewDebtInteractorOutput {
     func onError() {
         
     }
-    
     
 }

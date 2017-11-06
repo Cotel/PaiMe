@@ -14,6 +14,8 @@ protocol NewDebtView {
     
     func showError()
     func dismissModal()
+    func enableSaveButton()
+    func disableSaveButton()
 }
 
 protocol NewDebtPresentation {
@@ -24,6 +26,7 @@ protocol NewDebtPresentation {
     
     func onViewDidLoad()
     func createNewDebt(from: String, to: String, quantity: Double)
+    func updateSaveButton(from: String, to: String, quantity: String)
     func dismiss()
 }
 

@@ -137,6 +137,7 @@
                     <connections>
                         <outlet property="fromTextField" destination="3oS-zv-VcS" id="Rxx-2M-hu6"/>
                         <outlet property="quantityNumberField" destination="gBi-m5-H89" id="0yB-mg-TsB"/>
+                        <outlet property="saveButton" destination="YfL-qd-cub" id="0e5-Hq-mp3"/>
                         <outlet property="toTextField" destination="jGv-cX-oi8" id="IOV-BN-yp7"/>
                     </connections>
                 </viewController>
