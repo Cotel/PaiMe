@@ -9,14 +9,17 @@
 import Foundation
 
 struct Debt : Equatable {
+    var id: Int
     var from: String
     var to: String
     var quantity: Double
+    var payed: Bool
 }
 
 func ==(lhs: Debt, rhs: Debt) -> Bool {
     return lhs.from == rhs.from &&
         lhs.to == rhs.to &&
-        lhs.quantity == rhs.quantity
+        lhs.quantity == rhs.quantity &&
+        lhs.payed == rhs.payed
 }
 

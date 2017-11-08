@@ -25,9 +25,18 @@ class DebtsListPresenter: DebtsListPresentation {
     func onRemoveDebt(at: Int, debt: Debt) {
         interactor?.removeDebt(debt)
     }
+    
+    func onTogglePayedStateForDebt(_ debt: Debt) {
+        interactor?.togglePayedState(debt)
+    }
+    
 }
 
 extension DebtsListPresenter: DebtsListInteractorOutput {
+    func didTogglePayedStateForDebt(_ debt: Debt) {
+        view?.updateItem(debt)
+    }
+    
     func didRetrieveDebts(_ debts: [Debt]) {
         view?.hideLoading()
         view?.showData(debts)

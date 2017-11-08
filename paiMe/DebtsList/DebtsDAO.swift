@@ -9,21 +9,33 @@
 import Foundation
 
 class DebtsDAO {
-    fileprivate var database: [Debt] = [
-        Debt(from: "Me", to: "Juan", quantity: 1.1),
-        Debt(from: "Juan", to: "Me", quantity: 12),
-        Debt(from: "Pedro", to: "Me", quantity: 62.37),
-    ]
+    fileprivate var database: [Debt] = []
     
     func getAllDebts() -> [Debt] {
         return database
     }
     
     func addDebt(_ debt: Debt) {
-        database.append(debt)
+        let debtWithId = Debt(
+            id: database.count,
+            from: debt.from,
+            to: debt.to,
+            quantity: debt.quantity,
+            payed: debt.payed)
+        database.append(debtWithId)
+    }
+    
+    func updateDebt(_ debt: Debt) {
+        database = database.map { savedDebt in
+            if (savedDebt.id == debt.id) {
+                return debt
+            } else {
+                return savedDebt
+            }
+        }
     }
     
     func removeDebt(_ debt: Debt) {
-        database = database.filter { $0 != debt }
+        database = database.filter { $0.id != debt.id }
     }
 }

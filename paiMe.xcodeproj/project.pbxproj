@@ -19,6 +19,7 @@
 		3D8999271FAC6C8100EF6B32 /* NewDebtPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D8999261FAC6C8100EF6B32 /* NewDebtPresenter.swift */; };
 		3D89992B1FAC847500EF6B32 /* DebtsListWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D89992A1FAC847500EF6B32 /* DebtsListWireframe.swift */; };
 		3D89992D1FAC86E200EF6B32 /* NewDebtWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D89992C1FAC86E200EF6B32 /* NewDebtWireframe.swift */; };
+		3D9773221FB36CD40028976F /* DebtTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D9773211FB36CD40028976F /* DebtTableViewCell.swift */; };
 		3DDFBC391FABA963005DBD54 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DDFBC381FABA963005DBD54 /* AppDelegate.swift */; };
 		3DDFBC3B1FABA963005DBD54 /* DebtsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DDFBC3A1FABA963005DBD54 /* DebtsListViewController.swift */; };
 		3DDFBC3E1FABA963005DBD54 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3DDFBC3C1FABA963005DBD54 /* Main.storyboard */; };
@@ -60,6 +61,7 @@
 		3D8999261FAC6C8100EF6B32 /* NewDebtPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewDebtPresenter.swift; sourceTree = "<group>"; };
 		3D89992A1FAC847500EF6B32 /* DebtsListWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebtsListWireframe.swift; sourceTree = "<group>"; };
 		3D89992C1FAC86E200EF6B32 /* NewDebtWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewDebtWireframe.swift; sourceTree = "<group>"; };
+		3D9773211FB36CD40028976F /* DebtTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebtTableViewCell.swift; sourceTree = "<group>"; };
 		3DDFBC351FABA963005DBD54 /* paiMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = paiMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3DDFBC381FABA963005DBD54 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3DDFBC3A1FABA963005DBD54 /* DebtsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebtsListViewController.swift; sourceTree = "<group>"; };
@@ -113,6 +115,7 @@
 				3D89992A1FAC847500EF6B32 /* DebtsListWireframe.swift */,
 				3D80C2D21FB06DBD00E430FB /* OwesListInteractor.swift */,
 				3D80C2D41FB06FEC00E430FB /* OwesListViewController.swift */,
+				3D9773211FB36CD40028976F /* DebtTableViewCell.swift */,
 			);
 			path = DebtsList;
 			sourceTree = "<group>";
@@ -327,6 +330,7 @@
 				3DDFBC391FABA963005DBD54 /* AppDelegate.swift in Sources */,
 				3D89992B1FAC847500EF6B32 /* DebtsListWireframe.swift in Sources */,
 				3D89991B1FAC632200EF6B32 /* DebtsListPresenter.swift in Sources */,
+				3D9773221FB36CD40028976F /* DebtTableViewCell.swift in Sources */,
 				3D8999201FAC650E00EF6B32 /* DebtsListInteractor.swift in Sources */,
 				3D8999271FAC6C8100EF6B32 /* NewDebtPresenter.swift in Sources */,
 				3D2E28891FACD155005DEAE3 /* NewDebtInteractor.swift in Sources */,

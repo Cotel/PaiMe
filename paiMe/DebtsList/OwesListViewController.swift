@@ -48,6 +48,17 @@ extension OwesListViewController: DebtsListView {
         debts = debts.filter { $0 != item }
         self.tableView.reloadData()
     }
+    
+    func updateItem(_ item: Debt) {
+        debts = debts.map {
+            if ($0.id == item.id) {
+                return item
+            } else {
+                return $0
+            }
+        }
+        self.tableView.reloadData()
+    }
 }
 
 extension OwesListViewController : UITableViewDataSource, UITableViewDelegate {    

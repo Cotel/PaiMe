@@ -25,4 +25,16 @@ class OwesListInteractor: DebtsListInteractorInput {
         dao.removeDebt(debt)
         presenter?.didRemoveDebt(debt)
     }
+    
+    func togglePayedState(_ debt: Debt) {
+        let newStateDebt = Debt(
+            id: debt.id,
+            from: debt.from,
+            to: debt.to,
+            quantity: debt.quantity,
+            payed: !debt.payed
+        )
+        dao.updateDebt(newStateDebt)
+        presenter?.didTogglePayedStateForDebt(newStateDebt)
+    }
 }

@@ -49,6 +49,24 @@ extension DebtsListViewController : DebtsListView {
         debts = debts.filter { $0 != item }
         self.tableView.reloadData()
     }
+    
+    func updateItem(_ item: Debt) {
+        debts = debts.map {
+            if ($0.id == item.id) {
+                return item
+            } else {
+                return $0
+            }
+        }
+        self.tableView.reloadData()
+    }
+}
+
+extension DebtsListViewController : DebtTableCellDelegate {
+    func didPressToggleButton(_ tag: Int) {
+        let debt = debts[tag]
+        presenter?.onTogglePayedStateForDebt(debt)
+    }
 }
 
 extension DebtsListViewController : UITableViewDataSource, UITableViewDelegate {
@@ -63,9 +81,22 @@ extension DebtsListViewController : UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "DebtCell", for: indexPath)
-        cell.textLabel?.text = debts[indexPath.row].from
-        cell.detailTextLabel?.text = String(debts[indexPath.row].quantity) + " €"
+        let identifier = "DebtTableViewCell"
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: identifier, for: indexPath) as? DebtTableViewCell else {
+            fatalError("Dequeued cell is not of type DebtTableViewCell")
+        }
+        let debt = debts[indexPath.row]
+        
+        cell.personNameLabel.text = debt.from
+        cell.quantityLabel.text = String(debt.quantity) + " €"
+        cell.tag = indexPath.row
+        if (!debt.payed) {
+            cell.togglePayedButton.setTitle("Mark as Payed", for: .normal)
+        } else {
+          cell.togglePayedButton.setTitle("Mark as Unpayed", for: .normal)
+        }
+        cell.cellDelegate = self
+        
         return cell
     }
     

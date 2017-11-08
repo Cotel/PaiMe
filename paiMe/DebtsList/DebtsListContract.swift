@@ -14,6 +14,7 @@ protocol DebtsListView: class {
     
     func showData(_ data: [Debt])
     func showEmptyData()
+    func updateItem(_ item: Debt)
     func removeItem(_ item: Debt)
     func showError()
     func showLoading()
@@ -28,6 +29,7 @@ protocol DebtsListPresentation {
     func onViewDidLoad()
     func showNewDebtModal()
     func onRemoveDebt(at: Int, debt: Debt)
+    func onTogglePayedStateForDebt(_ debt: Debt)
 }
 
 protocol DebtsListWireframeProtocol {
@@ -40,6 +42,7 @@ protocol DebtsListWireframeProtocol {
 protocol DebtsListInteractorOutput {
     func didRetrieveDebts(_ debts: [Debt])
     func didRemoveDebt(_ debt: Debt)
+    func didTogglePayedStateForDebt(_ debt: Debt)
     func onError()
 }
 
@@ -47,4 +50,5 @@ protocol DebtsListInteractorInput {
     var presenter: DebtsListInteractorOutput? {get set}
     func retrieveDebts()
     func removeDebt(_ debt: Debt)
+    func togglePayedState(_ debt: Debt)
 }
