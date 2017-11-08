@@ -19,7 +19,11 @@ class DebtsDAO {
         return database
     }
     
-    func addDebt(debt: Debt) {
+    func addDebt(_ debt: Debt) {
         database.append(debt)
+    }
+    
+    func removeDebt(_ debt: Debt) {
+        database = database.filter { $0 != debt }
     }
 }

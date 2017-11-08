@@ -21,6 +21,10 @@ class DebtsListPresenter: DebtsListPresentation {
     func showNewDebtModal() {
         wireframe?.presentNewDebtScreen(from: view!)
     }
+    
+    func onRemoveDebt(at: Int, debt: Debt) {
+        interactor?.removeDebt(debt)
+    }
 }
 
 extension DebtsListPresenter: DebtsListInteractorOutput {
@@ -32,6 +36,10 @@ extension DebtsListPresenter: DebtsListInteractorOutput {
     func onError() {
         view?.hideLoading()
         view?.showError()
+    }
+    
+    func didRemoveDebt(_ debt: Debt) {
+        view?.removeItem(debt)
     }
     
     

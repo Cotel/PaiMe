@@ -44,6 +44,11 @@ extension DebtsListViewController : DebtsListView {
     func showEmptyData() {
         
     }
+    
+    func removeItem(_ item: Debt) {
+        debts = debts.filter { $0 != item }
+        self.tableView.reloadData()
+    }
 }
 
 extension DebtsListViewController : UITableViewDataSource, UITableViewDelegate {
@@ -62,6 +67,12 @@ extension DebtsListViewController : UITableViewDataSource, UITableViewDelegate {
         cell.textLabel?.text = debts[indexPath.row].from
         cell.detailTextLabel?.text = String(debts[indexPath.row].quantity) + " €"
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            presenter?.onRemoveDebt(at: indexPath.row, debt: debts[indexPath.row])
+        }
     }
 }
 

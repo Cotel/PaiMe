@@ -8,8 +8,15 @@
 
 import Foundation
 
-struct Debt {
+struct Debt : Equatable {
     var from: String
     var to: String
     var quantity: Double
 }
+
+func ==(lhs: Debt, rhs: Debt) -> Bool {
+    return lhs.from == rhs.from &&
+        lhs.to == rhs.to &&
+        lhs.quantity == rhs.quantity
+}
+

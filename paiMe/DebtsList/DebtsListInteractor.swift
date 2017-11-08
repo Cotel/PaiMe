@@ -21,5 +21,10 @@ class DebtsListInteractor: DebtsListInteractorInput {
         presenter?.didRetrieveDebts(debts)
     }
     
+    func removeDebt(_ debt: Debt) {
+        dao.removeDebt(debt)
+        presenter?.didRemoveDebt(debt)
+    }
+    
     
 }
