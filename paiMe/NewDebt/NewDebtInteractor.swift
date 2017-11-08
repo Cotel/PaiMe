@@ -18,8 +18,8 @@ class NewDebtInteractor: NewDebtInteractorInput {
     
     func createNewDebt(from: String, to: String, quantity: Double) {
         let debt = Debt(id: 0, from: from, to: to, quantity: quantity, payed: false)
-        dao.addDebt(debt)
-        presenter?.onDebtCreated(debt)
+        let result = dao.addDebt(debt)
+        presenter?.onDebtCreated(result)
     }
     
 }

@@ -15,11 +15,12 @@ class DebtsListWireframe : DebtsListWireframeProtocol {
         return UIStoryboard(name: "Main", bundle: Bundle.main)
     }
     
+    static let dao: DebtsDAO = DebtsDAO()
+    
     class func createDebtsListModule() -> UIViewController {
         let navController = mainStoryboard.instantiateViewController(withIdentifier: "DebtsListNavigationController")
         if let view = navController.childViewControllers.first as? DebtsListView {
             let presenter = DebtsListPresenter()
-            let dao = DebtsDAO()
             let interactor = DebtsListInteractor(dao: dao)
             let wireframe = DebtsListWireframe()
             
@@ -38,7 +39,6 @@ class DebtsListWireframe : DebtsListWireframeProtocol {
         let navController = mainStoryboard.instantiateViewController(withIdentifier: "OwesListNavigationController")
         if let view = navController.childViewControllers.first as? DebtsListView {
             let presenter = DebtsListPresenter()
-            let dao = DebtsDAO()
             let interactor = OwesListInteractor(dao: dao)
             let wireframe = DebtsListWireframe()
             
@@ -54,7 +54,9 @@ class DebtsListWireframe : DebtsListWireframeProtocol {
     }
     
     func presentNewDebtScreen(from view: DebtsListView) {
-        let newDebtViewController = NewDebtWireframe.createNewDebtModule(modalDelegate: view.presenter as! NewDebtModalDelegate)
+        let newDebtViewController = NewDebtWireframe.createNewDebtModule(
+            modalDelegate: view.presenter as! NewDebtModalDelegate,
+            dao: DebtsListWireframe.dao)
         
         if let sourceView = view as? UIViewController {
             sourceView.navigationController?.present(newDebtViewController, animated: true, completion: nil)

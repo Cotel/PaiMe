@@ -45,6 +45,6 @@ protocol NewDebtInteractorInput {
 }
 
 protocol NewDebtWireframeProtocol {    
-    static func createNewDebtModule(modalDelegate: NewDebtModalDelegate) -> UIViewController
+    static func createNewDebtModule(modalDelegate: NewDebtModalDelegate, dao: DebtsDAO) -> UIViewController
     func dismiss(_ view: NewDebtView)
 }

@@ -6,11 +6,11 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "paiMe/NewDebt/NewDebtPresenter.swift"
-            timestampString = "531656460.847454"
+            timestampString = "531862532.582532"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "41"
@@ -22,11 +22,11 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "paiMe/NewDebt/NewDebtPresenter.swift"
-            timestampString = "531656460.847537"
+            timestampString = "531862532.58295"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "40"
@@ -38,11 +38,11 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "paiMe/NewDebt/NewDebtPresenter.swift"
-            timestampString = "531656460.84808"
+            timestampString = "531862532.583279"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "30"
@@ -54,33 +54,49 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "No"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "paiMe/DebtsList/DebtsListViewController.swift"
-            timestampString = "531860470.735355"
+            filePath = "paiMe/DebtsList/DebtsDAO.swift"
+            timestampString = "531862532.583532"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "105"
-            endingLineNumber = "105"
-            landmarkName = "tableView(_:commit:forRowAt:)"
+            startingLineNumber = "30"
+            endingLineNumber = "30"
+            landmarkName = "updateDebt(_:)"
             landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "paiMe/DebtsList/DebtsListViewController.swift"
-            timestampString = "531860470.735844"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "93"
-            endingLineNumber = "93"
-            landmarkName = "tableView(_:cellForRowAt:)"
-            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "paiMe.DebtsDAO.updateDebt(paiMe.Debt) -&gt; paiMe.Debt"
+                  moduleName = "paiMe"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/cotel/Documents/Programacion/iOs/paiMe/paiMe/DebtsList/DebtsDAO.swift"
+                  timestampString = "531862389.73044"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "30"
+                  endingLineNumber = "30"
+                  offsetFromSymbolStart = "101">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (paiMe.Debt) -&gt; paiMe.Debt in paiMe.DebtsDAO.updateDebt(paiMe.Debt) -&gt; paiMe.Debt"
+                  moduleName = "paiMe"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/cotel/Documents/Programacion/iOs/paiMe/paiMe/DebtsList/DebtsDAO.swift"
+                  timestampString = "531862389.732774"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "31"
+                  endingLineNumber = "31"
+                  offsetFromSymbolStart = "244">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

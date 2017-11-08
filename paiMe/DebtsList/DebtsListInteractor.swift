@@ -34,8 +34,8 @@ class DebtsListInteractor: DebtsListInteractorInput {
             quantity: debt.quantity,
             payed: !debt.payed
         )
-        dao.updateDebt(newStateDebt)
-        presenter?.didTogglePayedStateForDebt(newStateDebt)
+        let result = dao.updateDebt(newStateDebt)
+        presenter?.didTogglePayedStateForDebt(result)
     }
     
     

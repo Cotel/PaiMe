@@ -17,7 +17,7 @@ class DebtTableViewCell: UITableViewCell {
     @IBOutlet weak var togglePayedButton: UIButton!
     
     @IBAction func toggleButtonAction(_ sender: UIButton) {
-        cellDelegate?.didPressToggleButton(sender.tag)
+        cellDelegate?.didPressToggleButton(self.tag)
     }
     
     override func awakeFromNib() {

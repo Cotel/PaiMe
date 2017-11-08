@@ -64,6 +64,7 @@ extension DebtsListViewController : DebtsListView {
 
 extension DebtsListViewController : DebtTableCellDelegate {
     func didPressToggleButton(_ tag: Int) {
+        print(tag)
         let debt = debts[tag]
         presenter?.onTogglePayedStateForDebt(debt)
     }

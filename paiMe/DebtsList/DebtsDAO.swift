@@ -15,17 +15,18 @@ class DebtsDAO {
         return database
     }
     
-    func addDebt(_ debt: Debt) {
+    func addDebt(_ debt: Debt) -> Debt {
         let debtWithId = Debt(
-            id: database.count,
+            id: database.count+1,
             from: debt.from,
             to: debt.to,
             quantity: debt.quantity,
             payed: debt.payed)
         database.append(debtWithId)
+        return debtWithId
     }
     
-    func updateDebt(_ debt: Debt) {
+    func updateDebt(_ debt: Debt) -> Debt {
         database = database.map { savedDebt in
             if (savedDebt.id == debt.id) {
                 return debt
@@ -33,6 +34,7 @@ class DebtsDAO {
                 return savedDebt
             }
         }
+        return debt
     }
     
     func removeDebt(_ debt: Debt) {

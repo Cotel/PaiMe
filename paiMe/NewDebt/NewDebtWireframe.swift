@@ -14,11 +14,10 @@ class NewDebtWireframe : NewDebtWireframeProtocol {
         return UIStoryboard(name: "Main", bundle: Bundle.main)
     }
     
-    class func createNewDebtModule(modalDelegate: NewDebtModalDelegate) -> UIViewController {
+    class func createNewDebtModule(modalDelegate: NewDebtModalDelegate, dao: DebtsDAO) -> UIViewController {
         let navController = mainStoryboard.instantiateViewController(withIdentifier: "NewDebtNavigationController")
         if var view = navController.childViewControllers.first as? NewDebtView {
             let presenter = NewDebtPresenter()
-            let dao = DebtsDAO()
             let interactor = NewDebtInteractor(dao: dao)
             let wireframe = NewDebtWireframe()
             
